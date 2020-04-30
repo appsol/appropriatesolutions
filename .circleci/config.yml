@@ -19,7 +19,7 @@ jobs:
                 command: |
                   git config user.email "appsol@gmail.com"
                   git config user.name "appsol"
-                  npm deploy
+                  npm run deploy
             - store_artifacts:
                 path: test-results.xml
                 prefix: tests
