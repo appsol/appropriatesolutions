@@ -14,6 +14,9 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+            - add_ssh_keys:
+                fingerprints:
+                  - 'e9:fd:ed:0b:56:b9:39:97:6d:9f:6d:d3:b1:8c:e3:f2'
             - run:
                 name: Deploy tp GH Pages
                 command: |
