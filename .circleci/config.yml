@@ -8,6 +8,7 @@ jobs:
       name: node/default
     steps:
       - checkout
+          path: ~/appropriatesolutions
       - node/with-cache:
           steps:
             - run: pwd
