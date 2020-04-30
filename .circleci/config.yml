@@ -8,6 +8,8 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
+          cache-key: 'appropriatesolutions/package.json'
+          dir: 'appropriatesolutions/node_modules'
           steps:
             - run: cd appropriatesolutions
             - run: npm install
