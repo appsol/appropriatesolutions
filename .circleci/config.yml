@@ -3,15 +3,13 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
+    working_directory: ~/appropriatesolutions
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
-          cache-key: 'appropriatesolutions/package.json'
-          dir: 'appropriatesolutions/node_modules'
           steps:
-            - run: cd appropriatesolutions
             - run: npm install
             - run: npm test
 workflows:
