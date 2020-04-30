@@ -10,11 +10,21 @@ jobs:
       - checkout:
           path: ~/appropriatesolutions
       - node/with-cache:
+          cache-key: 'package-lock.json'
           steps:
-            - run: pwd
-            - run: ls -al
             - run: npm install
             - run: npm test
+            - run:
+                name: Deploy tp GH Pages
+                command: |
+                  git config user.email "appsol@gmail.com"
+                  git config user.name "appsol"
+                  npm deploy
+            - store_artifacts:
+                path: test-results.xml
+                prefix: tests
+            - store_test_results:
+                path: test-results.xml
 workflows:
   build-and-test:
     jobs:
