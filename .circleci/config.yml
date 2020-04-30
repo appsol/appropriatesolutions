@@ -8,11 +8,11 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-        cache-key: "appropriatesolutions/package.json"
+          cache-key: 'appropriatesolutions/package.json'
           steps:
             - run: npm install
             - run: npm test
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-test:
+    jobs:
+      - build-and-test
