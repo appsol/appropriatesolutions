@@ -3,9 +3,6 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
-    filters:
-      branches:
-        only: master
     working_directory: ~/appropriatesolutions/appropriatesolutions
     executor:
       name: node/default
@@ -34,4 +31,7 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - build-and-test
+      - build-and-test:
+          filters:
+            branches:
+              only: master
