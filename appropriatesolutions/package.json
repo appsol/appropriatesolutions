@@ -13,7 +13,7 @@
     "deploy": "DEPLOY_ENV=GH_PAGES npm run generate && gh-pages --dotfiles --message '[skip ci] Updates' -d dist"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "@nuxtjs/bulma": "^1.2.1"
   },
   "devDependencies": {
